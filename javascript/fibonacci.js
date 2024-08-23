@@ -1,5 +1,19 @@
 function fibonacci(num) {
   // type your code here
+  if (num === 0)
+    return 0;
+  else if (num === 1)
+    return 1;
+
+  let pn1 = 0, pn2 = 1, curNum = 1;
+  while (curNum < num) {
+    curNum++;
+    const tmp = pn2;
+    pn2 += pn1;
+    pn1 = tmp;
+  }
+
+  return pn2;
 }
 
 if (require.main === module) {
@@ -16,6 +30,16 @@ if (require.main === module) {
 
   console.log("Expecting: 55");
   console.log("=>", fibonacci(10));
+
+  console.log("");
+
+  console.log("Expecting: 1");
+  console.log("=>", fibonacci(1));
+
+  console.log("");
+
+  console.log("Expecting: 2");
+  console.log("=>", fibonacci(3));
 }
 
 module.exports = fibonacci;
