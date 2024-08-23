@@ -1,9 +1,7 @@
 function fibonacci(num) {
   // type your code here
-  if (num === 0)
-    return 0;
-  else if (num === 1)
-    return 1;
+  if (num < 2)
+    return num;
 
   let pn1 = 0, pn2 = 1, curNum = 1;
   while (curNum < num) {
